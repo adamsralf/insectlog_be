@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Insect extends Model
 {
@@ -19,4 +20,12 @@ class Insect extends Model
         'description',
         'indicator'
     ];
+
+    /*
+     * Relations
+     */
+    public function pictures(): HasMany
+    {
+        return $this->hasMany(InsectPicture::class);
+    }
 }
