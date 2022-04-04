@@ -35,4 +35,9 @@ class Insect extends Model
     {
         return $this->belongsTo(Language::class);
     }
+
+    public function logs(): HasMany
+    {
+        return $this->hasMany(Log::class);
+    }
 }

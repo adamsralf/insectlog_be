@@ -22,4 +22,9 @@ class User extends Model
     {
         return $this->belongsTo(School::class);
     }
+
+    public function logs(): HasMany
+    {
+        return $this->hasMany(Log::class);
+    }
 }
