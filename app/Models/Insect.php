@@ -14,6 +14,8 @@ class Insect extends Model
     protected $fillable = [
         'lang_id',
         'name',
+        'species_name',
+        'lifespan',
         'size',
         'food',
         'species',
