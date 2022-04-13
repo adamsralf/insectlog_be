@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Insect extends Model
@@ -12,34 +11,14 @@ class Insect extends Model
     use HasFactory;
 
     protected $fillable = [
-        'lang_id',
-        'name',
-        'species_name',
-        'lifespan',
-        'size',
-        'food',
-        'species',
-        'habitat',
-        'enemies',
-        'description',
-        'indicator'
+        'species_name'
     ];
 
-    /*
+    /**
      * Relations
      */
-    public function pictures(): HasMany
+    public function infos(): HasMany
     {
-        return $this->hasMany(InsectPicture::class);
-    }
-
-    public function languages(): BelongsTo
-    {
-        return $this->belongsTo(Language::class);
-    }
-
-    public function logs(): HasMany
-    {
-        return $this->hasMany(Log::class);
+        return $this->hasMany(InsectInfo::class);
     }
 }
