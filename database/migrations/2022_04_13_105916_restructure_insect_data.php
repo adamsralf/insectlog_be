@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::rename('insects', 'insect_infos');
 
-        Schema::table('insects', function (Blueprint $table) {
+        Schema::create('insects', function (Blueprint $table) {
            $table->id();
            $table->string('species_name');
            $table->timestamps();
