@@ -15,5 +15,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/generate_pdf/{insect}/web', [PDFController::class, 'generateCharacteristicsWeb']);
-Route::get('/generate_pdf/{insect}', [PDFController::class, 'generateCharacteristics']);
+Route::get('/generate-pdf/{insect}', [PDFController::class, 'generateCharacteristics']);
+Route::get('/generate-pdf/{insect}/{lang}', [PDFController::class, 'generateCharacteristicsLang']);

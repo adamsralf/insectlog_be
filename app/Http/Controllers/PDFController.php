@@ -3,25 +3,27 @@
 namespace App\Http\Controllers;
 
 use App\Models\Insect;
-use App\Models\Language;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class PDFController extends Controller
 {
-
-    public function generateCharacteristicsWeb(Request $request, Insect $insect) {
-        $data = [
-            'insect' => $insect
-        ];
-
-        return view('characteristics', $data);
-    }
-
-    public function generateCharacteristics(Request $request, Insect $insect)
+    public function generateCharacteristics(Request $request, Insect $insect): Response
     {
         $data = [
-            'insect' => $insect
+            'insect' => $insect->infos()->first()
+        ];
+
+        $pdf = Pdf::loadView('characteristics', $data);
+
+        return $pdf->download();
+    }
+
+    public function generateCharacteristicsLang(Request $request, Insect $insect, string $lang): Response
+    {
+        $data = [
+            'insect' => $insect->getInfosByLang($lang)->firstOrFail()
         ];
 
         $pdf = Pdf::loadView('characteristics', $data);
