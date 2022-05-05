@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\Insect;
+use App\Models\InsectInfo;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -19,7 +19,7 @@ class LogFactory extends Factory
     public function definition()
     {
         return [
-            'insect_id' => Insect::factory(1)->create()->first()->id,
+            'insect_id' => InsectInfo::factory(1)->create()->first()->id,
             'user_id' => User::factory(1)->create()->first()->id,
             'device_id' => $this->faker->numberBetween(1000000, 99999999),
             'latitude' => $this->faker->randomFloat(8),
