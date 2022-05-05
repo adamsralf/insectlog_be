@@ -21,4 +21,9 @@ class Insect extends Model
     {
         return $this->hasMany(InsectInfo::class);
     }
+
+    public function getInfosByLang(string $lang): HasMany
+    {
+        return $this->hasMany(InsectInfo::class)->where('lang', $lang);
+    }
 }
