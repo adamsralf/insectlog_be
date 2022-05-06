@@ -14,7 +14,6 @@ return new class extends Migration
     public function up()
     {
         Schema::table('insect_infos', function (Blueprint $table) {
-            $table->dropForeign('insects_lang_id_foreign');
             $table->string('lang')->change();
         });
     }

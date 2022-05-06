@@ -17,7 +17,7 @@ return new class extends Migration
             $table->unsignedBigInteger('lang_id')
                 ->after('id')
                 ->nullable();
-            $table->foreign('lang_id')->references('id')->on('languages');
+            # $table->foreign('lang_id')->references('id')->on('languages');
         });
     }
 
