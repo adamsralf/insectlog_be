@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PDFController;
+use App\Http\Controllers\CRUD\LogController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +18,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/generate-pdf/{insect}', [PDFController::class, 'generateCharacteristics']);
 Route::get('/generate-pdf/{insect}/{lang}', [PDFController::class, 'generateCharacteristicsLang']);
+
+Route::apiResource('log', LogController::class);
