@@ -13,11 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('insects', function (Blueprint $table) {
-            $table->unsignedBigInteger('lang_id')
-                ->after('id')
-                ->nullable();
-            # $table->foreign('lang_id')->references('id')->on('languages');
+        Schema::table('insect_infos', function (Blueprint $table) {
+            $table->string('lang')->change();
         });
     }
 
@@ -28,8 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('insects', function (Blueprint $table) {
-            //
+        Schema::table('insect_infos', function (Blueprint $table) {
+            $table->unsignedBigInteger('lang')->change();
         });
     }
 };

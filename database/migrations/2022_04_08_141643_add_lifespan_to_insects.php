@@ -14,10 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('insects', function (Blueprint $table) {
-            $table->unsignedBigInteger('lang_id')
-                ->after('id')
-                ->nullable();
-            # $table->foreign('lang_id')->references('id')->on('languages');
+            $table->string('lifespan')->after('species_name')->nullable();
         });
     }
 
@@ -29,7 +26,7 @@ return new class extends Migration
     public function down()
     {
         Schema::table('insects', function (Blueprint $table) {
-            //
+            $table->dropColumn('lifespan');
         });
     }
 };
