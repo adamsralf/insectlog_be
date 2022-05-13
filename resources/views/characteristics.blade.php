@@ -14,7 +14,7 @@
     </style>
 </head>
 <body>
-    <h1 class="text-center text-4xl font-bold mb-4">{{ $insect->name }}</h1>
+    <h1 class="text-center text-4xl font-bold mb-4">{{ $insect->species_name }}</h1>
 
     <p class="mb-16">{{ $insect->description }}</p>
     <span class="right">
@@ -27,42 +27,42 @@
         <tbody>
             <tr>
                 <td>Größe:</td>
-                <td>{{ $insect->size }}</td>
+                <td>{{ $info->size }}</td>
             </tr>
 
             <tr>
                 <td>Lebensdauer:</td>
-                <td>{{ $insect->lifespan }}</td>
+                <td>{{ $info->lifespan }}</td>
             </tr>
 
             <tr>
                 <td>Ernährung:</td>
-                <td>{{ $insect->food }}</td>
+                <td>{{ $info->food }}</td>
             </tr>
 
             <tr>
                 <td>Gattung:</td>
-                <td>{{ $insect->species }}</td>
+                <td>{{ $info->species }}</td>
             </tr>
 
             <tr>
                 <td>Wissenschaftlicher Name:</td>
-                <td>{{ $insect->species_name }}</td>
+                <td>{{ $info->species_name }}</td>
             </tr>
 
             <tr>
                 <td>Lebensraum:</td>
-                <td>{{ $insect->habitat }}</td>
+                <td>{{ $info->habitat }}</td>
             </tr>
 
             <tr>
                 <td>Feinde:</td>
-                <td>{{ $insect->enemies }}</td>
+                <td>{{ $info->enemies }}</td>
             </tr>
 
             <tr>
                 <td>Merkmale:</td>
-                <td>{{ $insect->indicator }}</td>
+                <td>{{ $info->indicator }}</td>
             </tr>
         </tbody>
     </table>

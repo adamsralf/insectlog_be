@@ -12,7 +12,8 @@ class PDFController extends Controller
     public function generateCharacteristics(Request $request, Insect $insect): Response
     {
         $data = [
-            'insect' => $insect->infos()->first()
+            'insect' => $insect,
+            'info' => $insect->infos()->firstOrFail()
         ];
 
         $pdf = Pdf::loadView('characteristics', $data);
@@ -23,7 +24,8 @@ class PDFController extends Controller
     public function generateCharacteristicsLang(Request $request, Insect $insect, string $lang): Response
     {
         $data = [
-            'insect' => $insect->getInfosByLang($lang)->firstOrFail()
+            'insect' => $insect,
+            'info' => $insect->getInfosByLang($lang)->firstOrFail()
         ];
 
         $pdf = Pdf::loadView('characteristics', $data);
