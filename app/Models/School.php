@@ -22,6 +22,10 @@ class School extends Model
         'password'
     ];
 
+    protected $hidden = [
+        'password'
+    ];
+
     /*
      * Relations
      */
