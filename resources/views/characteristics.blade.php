@@ -3,14 +3,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" integrity="sha512-wnea99uKIC3TJF7v4eKk4Y+lMz2Mklv18+r4na2Gn1abDRPPOeef95xTzdwGD9e6zXJBteMIhZ1+68QC5byJZw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <style>
-        .right {
-            float: right;
-            margin-left: 1em;
-        }
-
         table td { border: 0; padding-bottom: 2em; }
 
-        #qr { position: fixed; bottom: 0px; right: 0px; width: 200px; height: 200px; opacity: .1; }
+        #qr { position: fixed; bottom: 0px; right: 0px; width: 200px; height: 200px; }
     </style>
 </head>
 <body>
@@ -37,6 +32,8 @@
         </div>
     </div>
 
-    <div id="qr"><img src="https://via.placeholder.com/150" height="100%" width="100%"></div>
+    <div id="qr">
+        <img src="data:image/png;base64, {!! $qr !!} ">
+    </div>
 </body>
 </html>
