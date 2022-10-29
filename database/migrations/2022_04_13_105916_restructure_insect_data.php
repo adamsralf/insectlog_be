@@ -23,9 +23,12 @@ return new class extends Migration
 
         Schema::table('insect_infos', function (Blueprint $table) {
             $table->dropColumn('species_name');
-            $table->renameColumn('lang_id', 'lang');
             $table->unsignedBigInteger('insect_id');
             $table->foreign('insect_id')->references('id')->on('insects');
+        });
+
+        Schema::table('insect_infos', function (Blueprint $table) {
+            $table->renameColumn('lang_id', 'lang');
         });
     }
 
@@ -37,8 +40,12 @@ return new class extends Migration
     public function down()
     {
         Schema::rename('insect_infos', 'insects');
+
         Schema::table('insect_infos', function (Blueprint $table) {
             $table->string('species_name');
+        });
+
+        Schema::table('insect_infos', function (Blueprint $table) {
             $table->renameColumn('lang', 'lang_id');
         });
     }
